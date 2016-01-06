@@ -63,5 +63,5 @@ source $BIN_DIR/compile_steps/osrm_clean
 
 if [ ! -f $BUILD_DIR/Procfile ]; then
   topic "Define Procfile"
-  echo "web: /app/osrm-routed -p \$PORT /app/data.osrm" > $BUILD_DIR/Procfile
+  echo "web: /app/osrm-routed --max-table-size 1000 -p \$PORT /app/data.osrm" > $BUILD_DIR/Procfile
 fi
